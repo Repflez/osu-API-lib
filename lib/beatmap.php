@@ -24,10 +24,10 @@ function osu_get_beatmap($since = 0, $mapset_id = 0, $beatmap_id = 0, $cacheLeng
     // Setup the local path to save the cached results
     if ($since) {
         $fileName   = $apiPath . '/cache/beatmaps/'. $since . '.txt';
-    } else {
-        $fileName   = $apiPath . '/cache/beatmaps/b-'. $mapset_id . '.txt';
     } elseif ($beatmap_id) {
         $fileName   = $apiPath . '/cache/beatmaps/m-'. $beatmap_id . '.txt';
+    } else {
+        $fileName   = $apiPath . '/cache/beatmaps/b-'. $mapset_id . '.txt';
     }
     // Call the API and return the results
     return get_content($fileName,$fullPath, $cacheLength);

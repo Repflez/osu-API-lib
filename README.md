@@ -33,4 +33,18 @@ include_once( $apiPath . '/osu!api.php' );
 Usage
 =====
 
-TODO
+Users:
+````
+osu_get_user($user, $mode, $cacheLength);
+````
+$user - String
+$mode - Integer (Only 0-3, default 6)
+$cacheLength - Integer (Default 6 [hours])
+
+Beatmaps:
+````
+osu_get_beatmap($since, $mapset_id, $cacheLength);
+````
+$since - ??? (MySQL time)
+$mapset_id - Integer
+$cacheLength - Integer (Default 6 [hours])

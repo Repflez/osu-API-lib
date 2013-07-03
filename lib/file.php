@@ -30,16 +30,22 @@ function get_content($file, $url, $hours = 6, $fn = '', $fn_args = '') {
 
 function get_url($url) {
   global $appName, $appURL, $appVersion, $appEmail;
-  $ch = curl_init();
-  $options = array(
-    CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_CONNECTTIMEOUT => 5,
-    CURLOPT_HTTPHEADER => array('Content-type: application/json') ,
-    CURLOPT_USERAGENT =>  $appName . '/' . $appVersion . ' (' . $appURL . '; ' . $appEmail . ') osu!APIlib (https://github.com/Repflez/osu-API-lib)',
-  );
-  curl_setopt_array( $ch, $options );
-  $content = curl_exec($ch);
-  curl_close($ch);
+  // Do we have cURL installed?
+  if (function_exists('curl_init')) {
+    $ch = curl_init();
+    $options = array(
+      CURLOPT_URL => $url,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_CONNECTTIMEOUT => 5,
+      CURLOPT_HTTPHEADER => array('Content-type: application/json') ,
+      CURLOPT_USERAGENT =>  $appName . '/' . $appVersion . ' (' . $appURL . '; ' . $appEmail . ') osu!APIlib (https://github.com/Repflez/osu-API-lib)',
+    );
+    curl_setopt_array( $ch, $options );
+    $content = curl_exec($ch);
+    curl_close($ch);
+  } else {
+    // No, use the slower file_get_contents.
+    $content = file_get_contents($url);
+  }
   return $content;
 }

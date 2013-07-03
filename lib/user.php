@@ -21,8 +21,8 @@
  */
 function osu_get_user($user, $mode = 0, $cacheLength = 6) {
     global $osuPath, $apiKey, $apiPath;
-    if (empty($user))   return 'Specify a user first!';
-    if ($mode > 3)      return 'Mode non-existant.';
+    if (!$user)     return 'Specify a user first!';
+    if ($mode > 3)  return 'Mode non-existant.';
     // Setup the remote path to call
     $fullPath = $osuPath . 'get_user?u='. $user . '&m=' . $mode . '&k=' . $apiKey;
     // Setup the local path to save the cached results

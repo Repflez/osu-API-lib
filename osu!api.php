@@ -7,3 +7,4 @@
 include_once('lib/file.php');
 include_once('lib/user.php');
 include_once('lib/beatmap.php');
+include_once('lib/score.php');

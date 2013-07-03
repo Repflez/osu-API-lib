@@ -37,20 +37,13 @@ Users:
 ````
 osu_get_user($user, $mode, $cacheLength);
 $user - String
-<<<<<<< HEAD
 $mode - Integer (Only 0-3, default 0)
-=======
-
-$mode - Integer (Only 0-3, default 6)
-
->>>>>>> 6d08014023a65f6b6ae493a08da5281515c9debb
 $cacheLength - Integer (Default 6 [hours])
 ````
 Returns an Array containing the user data.
 
 Beatmaps:
 ````
-<<<<<<< HEAD
 osu_get_beatmap($since, $mapset_id, $beatmap_id, $cacheLength);
 $since - ??? (MySQL date)
 $mapset_id - Integer
@@ -64,14 +57,6 @@ Scores:
 osu_get_scores($beatmap_id, $mode, $cacheLength);
 $beatmap_id - Integer
 $mode - Integer (Only 0-3, default 0)
-=======
-osu_get_beatmap($since, $mapset_id, $cacheLength);
-````
-$since - ??? (MySQL time)
-
-$mapset_id - Integer
-
->>>>>>> 6d08014023a65f6b6ae493a08da5281515c9debb
 $cacheLength - Integer (Default 6 [hours])
 ````
 Returns an Array containing the top 50 scores of $beatmap_id.

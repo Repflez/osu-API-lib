@@ -45,7 +45,7 @@ Returns an Array containing the user data.
 Beatmaps:
 ````
 osu_get_beatmap($since, $mapset_id, $beatmap_id, $cacheLength);
-$since - ??? (MySQL date)
+$since - MySQL date
 $mapset_id - Integer
 $beatmap_id - Integer
 $cacheLength - Integer (Default 6 [hours])
@@ -57,6 +57,14 @@ Scores:
 osu_get_scores($beatmap_id, $mode, $cacheLength);
 $beatmap_id - Integer
 $mode - Integer (Only 0-3, default 0)
+$cacheLength - Integer (Default 6 [hours])
+````
+Returns an Array containing the top 50 scores of $beatmap_id.
+
+Multiplayer matches:
+````
+osu_get_match($match_id, $cacheLength);
+$match_id - Integer
 $cacheLength - Integer (Default 6 [hours])
 ````
 Returns an Array containing the top 50 scores of $beatmap_id.

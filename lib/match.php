@@ -9,17 +9,6 @@
  * an array with the specified data.
  ***********************************************************/
 
-/*
- *  osu!api expects $mode's number to be 0-3
- *
- *  This method ensures that is the case.
- *
- *  $mode can be:
- *  0 - osu!standard
- *  1 - Taiko
- *  2 - Catch the Beat
- *  3 - osu!mania
- */
 function osu_get_match($match_id, $cacheLength = 6) {
     global $osuPath, $apiKey, $apiPath;
     if (!$match_id)     return 'Specify a multiplayer match id first!';
